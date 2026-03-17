@@ -1,0 +1,6 @@
+Write a C Program that calls an External x86 Assembly
+function to determine the maximum and minimum elements in an
+Integer Array
+
+Write an x86 Assembly Routine to determine the second largest and
+second smallest Elements in the same Array
