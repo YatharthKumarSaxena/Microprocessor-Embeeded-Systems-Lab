@@ -1,0 +1,46 @@
+;<Program title>
+
+JMP START
+
+;data
+
+;code
+START: NOP
+
+;Start writing your code her
+MVI A,09H 
+STA 2500H
+
+LXI H,2501H
+MOV C,A
+LOOP: MOV M,A
+DCR C
+DCR A
+INX H
+JNZ LOOP
+
+LDA 2500H
+MOV C,A
+DCR C
+
+OUTER: LXI H,2501H
+MOV B,C
+
+SORT: MOV A,M
+INX H
+CMP M
+JC SKIP
+
+MOV D,M
+MOV M,A
+DCX H
+MOV M,D
+INX H
+
+SKIP: DCR B
+JNZ SORT
+
+DCR C
+JNZ OUTER
+
+HLT
